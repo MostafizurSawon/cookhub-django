@@ -18,6 +18,7 @@ class Recipe(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
     image = models.ImageField(upload_to="recipe/images/")
     instructions = models.TextField()
+    created_on = models.DateField(auto_now_add=True, null=True, blank=True)
     
     def __str__(self):
         return f"{self.title} of Mr. {self.user.first_name} {self.user.last_name}"
