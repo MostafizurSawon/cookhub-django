@@ -3,7 +3,7 @@ from . import models
 
 class RecipeSerializer(serializers.ModelSerializer):
     user = serializers.StringRelatedField(many=False)
-    # category = serializers.StringRelatedField(many=True)
+    category = serializers.StringRelatedField(many=True)
     class Meta:
         model = models.Recipe
         fields = '__all__'
