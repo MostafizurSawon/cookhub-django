@@ -18,6 +18,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework.routers import DefaultRouter
+from . import views
+
+router = DefaultRouter() # amader router
+
+# router.register('users', views.UserViewset)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,7 +31,7 @@ urlpatterns = [
     # path('services/', include('service.urls')),
     path('user/', include('user_profile.urls')),
     path('recipe/', include('recipe.urls')),
-    # path('appointment/', include('appointment.urls')),
+    # path('', include(router.urls)),
 ]
 
 
