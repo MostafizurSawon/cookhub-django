@@ -23,8 +23,8 @@ class UserProfile(models.Model):
 
     def save(self, *args, **kwargs):
     # Sync first_name field with user.first_name
-        if not self.first_name:
-            self.first_name = self.user.first_name
-            self.last_name = self.user.last_name
-            self.email = self.user.email
+        # if not self.first_name:
+        self.first_name = self.user.first_name
+        self.last_name = self.user.last_name
+        self.email = self.user.email
         super().save(*args, **kwargs)
