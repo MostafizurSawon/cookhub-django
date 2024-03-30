@@ -6,7 +6,6 @@ SEX_CHOICES = [
     ('Male', 'Male'),
     ('Female', 'Female'),
 ]
-
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
     image = models.ImageField(upload_to='user_profile/images/')
@@ -20,11 +19,3 @@ class UserProfile(models.Model):
     
     def __str__(self):
         return f"{self.user.first_name} {self.user.last_name}"
-
-    def save(self, *args, **kwargs):
-    # Sync first_name field with user.first_name
-        # if not self.first_name:
-        self.first_name = self.user.first_name
-        self.last_name = self.user.last_name
-        self.email = self.user.email
-        super().save(*args, **kwargs)

@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 from . import views
 
-router = DefaultRouter() # amader router
+# router = DefaultRouter() # amader router
 
 # router.register('users', views.UserViewset)
 
